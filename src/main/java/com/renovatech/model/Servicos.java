@@ -18,7 +18,8 @@ public class Servicos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+	@Size(max =  5000) 
 	private String foto;
 	
 	@NotBlank(message = "O atributo razão social é Obrigatório!!") 
@@ -34,7 +35,7 @@ public class Servicos {
 	private String contato;
 	
 	@NotBlank(message="O atributo descrição é obrigatório!")
-    @Size(min = 150, max = 500,  message = "O atributo descrição deve ter no mínimo 150 caracteres e no máximo 500 caracteres")
+    @Size(min = 5, max = 500,  message = "O atributo descrição deve ter no mínimo 150 caracteres e no máximo 500 caracteres")
 	private String descricao;
 	
 	@ManyToOne
