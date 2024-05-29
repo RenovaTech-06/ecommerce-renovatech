@@ -29,9 +29,10 @@ public class Cliente {
     private String email;
 	
 	@NotBlank(message = "O atributo senha  é Obrigatório!") 
-    @Size(min = 8, max = 30, message = "O atributo senha deve conter no mínimo 08 e no máximo 30 caracteres")
+    @Size(min = 8, max = 500, message = "O atributo senha deve conter no mínimo 08 e no máximo 30 caracteres")
     private String senha;
 	
+	@Size(max = 5000)
 	private String foto;
 
 	public Long getId() {
