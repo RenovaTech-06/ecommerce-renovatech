@@ -1,9 +1,16 @@
 package com.renovatech.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -17,7 +24,7 @@ public class Cliente {
 	private Long id;
 	
 	@NotBlank(message = "O atributo CNPJ é Obrigatório")
-    @Size(min = 10, max = 20 , message = "O atributo CNPJ deve conter no mínimo 10 e no máximo 20 caracteres")
+    @Size(min = 14, max = 14 , message = "O atributo CNPJ deve conter no mínimo 14 e no máximo 14 caracteres")
 	private String cnpj;
 	
 	@NotBlank(message = "O atributo razão social é Obrigatório!!") 
@@ -34,6 +41,10 @@ public class Cliente {
 	
 	@Size(max = 5000)
 	private String foto;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("cliente")
+    private List<Servicos> servicos;
 
 	public Long getId() {
 		return id;
@@ -82,5 +93,14 @@ public class Cliente {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
+	public List<Servicos> getServicos() {
+		return servicos;
+	}
+
+	public void setServicos(List<Servicos> servicos) {
+		this.servicos = servicos;
+	}
+	
 	
 }

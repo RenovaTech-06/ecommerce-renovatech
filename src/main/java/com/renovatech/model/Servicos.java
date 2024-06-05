@@ -41,6 +41,10 @@ public class Servicos {
 	@ManyToOne
 	@JsonIgnoreProperties("servicos")
 	private SetorAtuacao setorAtuacao;
+	
+	@ManyToOne
+    @JsonIgnoreProperties("servicos")
+    private Cliente cliente;
 
 	public Long getId() {
 		return id;
@@ -97,5 +101,15 @@ public class Servicos {
 	public void setSetorAtuacao(SetorAtuacao setorAtuacao) {
 		this.setorAtuacao = setorAtuacao;
 	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	
 	
 }
