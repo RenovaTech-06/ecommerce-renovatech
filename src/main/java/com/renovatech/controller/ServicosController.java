@@ -47,7 +47,11 @@ public class ServicosController {
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 	
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> b09fbf0a93b5baeac500aa5a2438508e49b26b7e
 	@PostMapping
     public ResponseEntity<Servicos> post(@Valid @RequestBody Servicos servicos){
         if(setorAtuacaoRepository.existsById(servicos.getSetorAtuacao().getId()))
