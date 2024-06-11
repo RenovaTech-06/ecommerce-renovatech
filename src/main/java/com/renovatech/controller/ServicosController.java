@@ -47,10 +47,6 @@ public class ServicosController {
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 	
-	@GetMapping("/razaoSocial/{razaoSocial}")
-    public ResponseEntity<List<Servicos>> getByTitulo(@PathVariable String razaoSocial){
-        return ResponseEntity.ok(servicosRepository.findAllByRazaoSocialContainingIgnoreCase(razaoSocial));
-    }
 	
 	@PostMapping
     public ResponseEntity<Servicos> post(@Valid @RequestBody Servicos servicos){

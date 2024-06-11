@@ -28,7 +28,7 @@ public class Cliente {
 	private String cnpj;
 	
 	@NotBlank(message = "O atributo razão social é Obrigatório!!") 
-    @Size(min = 5, max =  300, message = "O atributo titulo deve conter no mínimo 05 e no máximo 300 caracteres") 
+    @Size(min = 4, max =  300, message = "O atributo titulo deve conter no mínimo 05 e no máximo 300 caracteres") 
 	private String razaoSocial;
 	
 	@NotBlank(message = "O atributo email é Obrigatório!") 
