@@ -9,6 +9,5 @@ import com.renovatech.model.Servicos;
 
 public interface ServicosRepository extends JpaRepository<Servicos, Long>{
 	
-	public List <Servicos> findAllByRazaoSocialContainingIgnoreCase(@Param("razaoSocial") String razaoSocial);
-
+	
 }
