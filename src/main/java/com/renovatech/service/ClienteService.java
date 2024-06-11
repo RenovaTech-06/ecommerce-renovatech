@@ -33,7 +33,7 @@ public class ClienteService {
 
 	    public Optional<Cliente> cadastrarCliente(Cliente cliente) {
 
-	        if (clienteRepository.findByEmail(cliente.getEmail()).isPresent())
+	        if (clienteRepository.findByEmail(cliente.getEmail()).isPresent() || clienteRepository.findByCnpj(cliente.getCnpj()).isPresent())
 	            return Optional.empty();
 
 	        cliente.setSenha(criptografarSenha(cliente.getSenha())); 
@@ -82,6 +82,7 @@ public class ClienteService {
 	                	
 	                	clienteLogin.get().setId(cliente.get().getId());
 	                    clienteLogin.get().setRazaoSocial(cliente.get().getRazaoSocial());
+	                    clienteLogin.get().setCnpj(cliente.get().getCnpj());
 	                    clienteLogin.get().setFoto(cliente.get().getFoto());
 	                    clienteLogin.get().setToken(gerarToken(clienteLogin.get().getEmail()));
 	                    clienteLogin.get().setSenha("");

@@ -19,16 +19,8 @@ public class Servicos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Size(max =  5000) 
-	private String foto;
-	
-	@NotBlank(message = "O atributo razão social é Obrigatório!!") 
-    @Size(min = 5, max =  300, message = "O atributo titulo deve conter no mínimo 05 e no máximo 300 caracteres") 
-	private String razaoSocial;
-	
-	@NotBlank(message = "O atributo CNPJ é Obrigatório")
-    @Size(min = 10, max = 20 , message = "O atributo CNPJ deve conter no mínimo 10 e no máximo 20 caracteres")
-	private String cnpj;
+  	@Size(max =  5000) 
+  	private String foto;
 	
 	@NotBlank(message = "O atributo contato é Obrigatório!") 
     @Size(min = 5, max = 20, message = "O atributo contato deve conter no mínimo 05 e no máximo 20 caracteres")
@@ -60,22 +52,6 @@ public class Servicos {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
-	}
-
-	public String getRazaoSocial() {
-		return razaoSocial;
-	}
-
-	public void setRazaoSocial(String razaoSocial) {
-		this.razaoSocial = razaoSocial;
-	}
-
-	public String getCnpj() {
-		return cnpj;
-	}
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
 	}
 
 	public String getContato() {

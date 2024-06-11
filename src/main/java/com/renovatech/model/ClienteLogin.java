@@ -12,6 +12,8 @@ public class ClienteLogin {
 	
 	private String email;
 	
+	private String cnpj;
+	
 	private String senha;
 	
 	private String foto;
@@ -42,6 +44,14 @@ public class ClienteLogin {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 	public String getSenha() {
